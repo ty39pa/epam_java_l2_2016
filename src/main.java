@@ -17,7 +17,13 @@ public class main {
 
         while (true) {
             Order order = OrderReader.orderRead();
-            CarSearch.searchFreeCar(CarArrayList, order);
+            Car CarForOrder = CarSearch.searchFreeCar(CarArrayList, order);
+            if(CarForOrder) {
+                System.out.println("Мы подобрали для вас машину!");
+                System.out.println("Марка автомобиля: "+auto.getCarMark());
+                System.out.println("Номер автомобиля: "+auto.getCarNumber());
+            }
+
         }
     }
 }
